@@ -17,7 +17,7 @@ public class TesteAddUsuario {
 			u.setEmail_usuario(JOptionPane.showInputDialog("Digite o email: ")); 
 			u.setSenha_usuario(JOptionPane.showInputDialog("Digite a senha: ")); 
 			if(dao_usu.addUser(u) == 0) {
-				System.out.println("Ususario não cadastrado");
+				System.out.println("Usuario não cadastrado");
 			} else {
 				System.out.println("Usuario cadastrado com sucesso");
 			}

@@ -18,7 +18,39 @@ public class VeiculoDAO {
 	
 	public Veiculo getVeiculo(String placa) throws Exception {
 		stmt = con.prepareStatement
-				("select * from TBA_USUARIO where ID_VEICULO=?"); 
-		
+				("select * from TBA_VEICULO where PLACA=?"); 
+		stmt.setString(1, placa); 
+		rs = stmt.executeQuery(); 
+		if (rs.next()) {
+			return new Veiculo(
+					rs.getInt("ID_VEICULO"), 
+					rs.getString("PLACA"), 
+					rs.getString("MARCA"), 
+					rs.getString("MODELO")
+					);
+		} else {
+			return new Veiculo();
+		}
+	} 
+	
+	public int addVeiculo(Veiculo v) throws Exception {
+		stmt = con.prepareStatement("INSERT INTO "
+				+ "TBA_VEICULO(ID_VEICULO, PLACA, MARCA, MODELO)"
+				+ "VALUES(?,?,?,?)");  
+		stmt.setInt(1, v.getId_veiculo());
+		stmt.setString(2, v.getPlaca());
+		stmt.setString(3, v.getMarca()); 
+		stmt.setString(4, v.getModelo()); 
+		return stmt.executeUpdate();
+	}  
+	
+	public int deletarVeiculo(String placa) throws Exception {
+		stmt = con.prepareStatement("delete from TBA_VEICULO where PLACA=?");
+		stmt.setString(1, placa);
+		return stmt.executeUpdate();
+	}
+	
+	public void encerrar() throws Exception {
+		con.close();
 	}
 }
