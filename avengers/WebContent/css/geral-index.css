@@ -1,0 +1,56 @@
+body {
+    font-family: "Arial Narrow", Arial, sans-serif;
+  }
+  
+  html,
+  body,
+  main {
+    min-height: 100%;
+  }
+  
+  header {
+    display: flex;
+    padding: 10px 40px;
+    align-items: center;
+    background-color: #808080;
+  }
+  
+  header .logo {
+    margin: 0 110px 0 20px;
+    margin-left: 5%;
+  }
+  
+  header .navbar {
+    width: 20%;
+  }
+  
+  header .navbar ul {
+    padding: 0 100px;
+    justify-content: space-around;
+    display: flex;
+    align-items: center;
+  }
+  
+  header .navbar li {
+    padding: 0 25px;
+    margin: 0 50px 0 30px;
+  }
+  
+  header .navbar a {
+    color: #fff;
+    font-size: 18px;
+  }
+  
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    padding: 20px;
+  }
+  
+  footer p {
+    color: #fff;
+    font-size: 12px;
+  }
+  
