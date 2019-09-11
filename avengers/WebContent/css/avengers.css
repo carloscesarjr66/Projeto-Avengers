@@ -1,0 +1,52 @@
+.bg {
+  background-image: url("../img/avenger.jpg");
+}
+
+.logo {
+  display: block;
+  margin: 30px auto;
+  width: 250px;
+  height: 150px;
+}
+#caixa-adm {
+	margin-top: 6px;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+.cadastro,
+.login,
+.entrada,
+.saida {
+  display: block;
+  margin: 10px auto;
+}
+
+.form-control {
+  opacity: 0.8;
+}
+
+.btnCadastrar,
+.btnLogin {
+  display: block;
+  margin: 10px auto;
+}
+
+.desc_input {
+  color: #fff;
+}
+
+#erroNome,
+#erroEmail,
+#erroSenha,
+#erroConfirmaSenha {
+  color: red;
+}
+
+.erros {
+  color: #fff;
+}
+
+.sucesso {
+  background-color: green;
+  color: #fff;
+}

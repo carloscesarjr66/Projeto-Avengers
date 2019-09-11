@@ -14,6 +14,7 @@ public class TesteUsuario {
 			System.out.println("NOME: " + u.getNome_usuario()); 
 			System.out.println("EMAIL: "+u.getEmail_usuario()); 
 			System.out.println("SENHA: "+u.getSenha_usuario()); 
+			System.out.println("É ADM? " + ((u.getIs_adm() == 1) ? "True" : "False"));
 			dao_usu.encerrar();
 		} catch (Exception e) {
 			e.printStackTrace();

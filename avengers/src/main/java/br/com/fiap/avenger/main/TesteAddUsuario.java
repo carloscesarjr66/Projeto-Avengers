@@ -16,6 +16,7 @@ public class TesteAddUsuario {
 			u.setNome_usuario(JOptionPane.showInputDialog("Digite o nome: ")); 
 			u.setEmail_usuario(JOptionPane.showInputDialog("Digite o email: ")); 
 			u.setSenha_usuario(JOptionPane.showInputDialog("Digite a senha: ")); 
+			u.setIs_adm(Integer.parseInt(JOptionPane.showInputDialog("É ADM? 1  OU  0")));
 			if(dao_usu.addUser(u) == 0) {
 				System.out.println("Usuario não cadastrado");
 			} else {

@@ -5,16 +5,18 @@ public class Usuario {
 	public String nome_usuario;
 	public String email_usuario;
 	public String senha_usuario;
+	private int is_adm;
 	
 	public Usuario() {
 	
 	}
-	public Usuario(int id_usuario, String nome_usuario, String email_usuario, String senha_usuario) {
+	public Usuario(int id_usuario, String nome_usuario, String email_usuario, String senha_usuario, int is_adm) {
 		super();
 		this.id_usuario = id_usuario;
 		this.nome_usuario = nome_usuario;
 		this.email_usuario = email_usuario;
 		this.senha_usuario = senha_usuario;
+		this.setIs_adm(is_adm);
 	}
 	public int getId_usuario() {
 		return id_usuario;
@@ -39,6 +41,22 @@ public class Usuario {
 	}
 	public void setSenha_usuario(String senha_usuario) {
 		this.senha_usuario = senha_usuario;
+	}
+	public int getIs_adm() {
+		if (is_adm == 1 ) {
+			return 1;
+		}else {
+			return 0;
+		}
+	}
+	
+	public void setIs_adm(int is_adm) {
+		if (is_adm == 0 || is_adm == 1) {
+			this.is_adm = is_adm;
+		}
+		if (is_adm != 0 || is_adm != 1) {
+			this.is_adm = 0;
+		}
 	}
 	
 

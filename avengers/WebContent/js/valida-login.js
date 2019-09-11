@@ -1,6 +1,6 @@
-var login = document.querySelector("#login");
-var senha = document.querySelector("#password");
-var botao = document.querySelector("#btn");
+var login = document.querySelector("#email");
+var senha = document.querySelector("#senha");
+var form = document.querySelector("#form-geral")
 login.focus();
 login.onblur = () => {
   if (login.value.indexOf("@") == -1 || login.value.length < 3) {
@@ -22,7 +22,7 @@ senha.onblur = () => {
   }
 };
 
-botao.onclick = e => {
+form.onsubmit = e => {
   e.preventDefault();
   if (login.value.indexOf("@") == -1 || login.value.length < 3) {
     login.style.borderColor = "red";

@@ -26,7 +26,8 @@ public class UsuarioDAO {
 					rs.getInt("ID_USUARIO"), 
 					rs.getString("NM_USUARIO"), 
 					rs.getString("EMAIL_USUARIO"),
-					rs.getString("PWD_USUARIO")
+					rs.getString("PWD_USUARIO"),
+					rs.getInt("IS_ADM")
 					);
 		} else {
 			return new Usuario();
@@ -35,12 +36,13 @@ public class UsuarioDAO {
 	
 	public int addUser(Usuario u) throws Exception{
 		stmt = con.prepareStatement("INSERT INTO "
-				+ "TBA_USUARIO(ID_USUARIO, NM_USUARIO, EMAIL_USUARIO, PWD_USUARIO)"
-				+ "VALUES(?,?,?,?)");  
+				+ "TBA_USUARIO(ID_USUARIO, NM_USUARIO, EMAIL_USUARIO, PWD_USUARIO, IS_ADM)"
+				+ "VALUES(?,?,?,?,?)");  
 		stmt.setInt(1, u.getId_usuario());
 		stmt.setString(2, u.getNome_usuario());
 		stmt.setString(3, u.getEmail_usuario()); 
-		stmt.setString(4, u.getSenha_usuario()); 
+		stmt.setString(4, u.getSenha_usuario());
+		stmt.setInt(5, u.getIs_adm());
 		return stmt.executeUpdate();
 	}
 
