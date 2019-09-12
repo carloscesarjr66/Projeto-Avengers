@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@include file="bootstrapcss.jsp"%>
 
-<title>Login Avengers</title>
+<title>Login Avenger's</title>
 </head>
 <body class="bg">
 	<div class="container">
@@ -16,14 +16,14 @@
 
 					<label class="desc_input" for="email">Email:</label>
 					<div class="input-group mb-3">
-						<input id="email" type="email" class="form-control"
+						<input id="email" type="email" name="email" class="form-control"
 							placeholder="ironman@avenger.com.br"  required/>
 					</div>
 					<div id='erroEmail' class="erros"></div>
 
 					<label class="desc_input" for="password">Senha:</label>
 					<div class="input-group mb-3">
-						<input id="senha" type="password" class="form-control"
+						<input id="senha" type="password" name="senha" class="form-control"
 							placeholder="Sua senha!"  required/>
 					</div>
 					<div id="erroSenha" class="erros"></div>
