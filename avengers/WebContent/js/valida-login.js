@@ -53,5 +53,5 @@ form.onsubmit = validaCampo => {
       senha.style.borderColor = "green";
       senha.textContent = "";
     }
-
+    form.submit();
 };

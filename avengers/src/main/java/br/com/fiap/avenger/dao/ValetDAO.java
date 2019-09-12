@@ -17,15 +17,31 @@ public class ValetDAO {
 		con = Conexao.queroConectar();
 	} 
 	
-	public int addValet(Valet v) throws Exception{
-		stmt = con.prepareStatement("INSERT INTO "
-				+ "TBA_VALET(ID_VALE, DT_ENTRADA, DT_SAIDA, PRECO, ID_VEICULO)"
-				+ "VALUES(?,?,?,?,?)");  
-		stmt.setInt(1, v.getId_valet()); 
-		stmt.setDate(2, (Date) v.getEntrada()); 
-		stmt.setDate(3, (Date) v.getSaida()); 
-		stmt.setDouble(4, v.getPreco());
-		stmt.setInt(5, v.getVeiculo().getId_veiculo());
-		return stmt.executeUpdate();
+	public Valet getValet(Date dt_saida) throws Exception {
+		stmt = con.prepareStatement
+				("SELECT TBA_VALET.ID_VALE, TBA_VEICULO.PLACA, "
+						+ "TBA_VEICULO.MARCA, TBA_VEICULO.MODELO, TBA_VALET.DT_ENTRADA, "
+						+ "TBA_VALET.DT_SAIDA, TBA_VALET.PRECO FROM TBA_VALET, "
+						+ "TBA_VEICULO WHERE TBA_VALET.ID_VALE = TBA_VEICULO.ID_VEICULO AND "
+						+ "TBA_VALET.DT_SAIDA = ?");
+	                                  	
+		stmt.setDate(1,  dt_saida);
+		
+		rs = stmt.executeQuery();
+		
+		if(rs.next()) {
+			return new Valet(
+					rs.getInt("ID_VALE"),
+					rs.getDate("DT_ENTRADA"),
+					rs.getDate("DT_SAIDA"),
+					rs.getDouble("PRECO")
+					), new Veiculo (
+							rs.getString("PLACA"),
+							rs.getString("MARCA"),
+							rs.getString("MODELO")
+							);   
+		} else {
+			return new Valet();
+		}
 	}
 }

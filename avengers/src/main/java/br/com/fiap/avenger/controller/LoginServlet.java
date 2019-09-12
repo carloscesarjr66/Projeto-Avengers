@@ -19,9 +19,7 @@ public class LoginServlet extends HttpServlet {
 		try {
 			dao_usu = new UsuarioDAO();
 			Usuario u = new Usuario(); 
-			
-			dao_usu.getUser(req.getParameter("email"), req.getParameter("senha"));
-			
+			dao_usu.getUser(req.getParameter("email"), req.getParameter("senha")); 
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
@@ -31,6 +29,6 @@ public class LoginServlet extends HttpServlet {
 				e.printStackTrace();
 			} 
 		}
-	}
-
+		req.getRequestDispatcher("home.jsp").forward(req, resp);
+	}	
 }
