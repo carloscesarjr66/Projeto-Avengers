@@ -16,10 +16,11 @@ public class UsuarioDAO {
 		con = Conexao.queroConectar();
 	}
 
-	public Usuario getUser(int id_usuario) throws Exception {
+	public Usuario getUser(String email_usuario, String senha_usuario) throws Exception {
 		stmt = con.prepareStatement
-				("select * from TBA_USUARIO where ID_USUARIO=?");
-		stmt.setInt(1, id_usuario);
+				("select * from TBA_USUARIO where EMAIL_USUARIO=? and PWD_USUARIO=? ");
+		stmt.setString(1, email_usuario); 
+		stmt.setString(2, senha_usuario);
 		rs = stmt.executeQuery();
 		if (rs.next()) {
 			return new Usuario(

@@ -34,23 +34,23 @@
 
 				<img class="logo" src="img/logoAvenger.jpg" alt="">
 
-				<form id="form-geral" class="cadastro" action="avengers-login.html"
-					method="post">
+				<form id="form-geral" class="cadastro" action="cadastro"
+					method="get">
 					<label class="desc_input" for="name">Nome:</label>
 					<div class="input-group mb-3">
-						<input id="name" type="text" class="form-control">
+						<input id="name" type="text" name="nome" class="form-control">
 					</div>
 					<div id="erroNome"></div>
 
 					<label class="desc_input" for="email">Email:</label>
 					<div class="input-group mb-3">
-						<input id="email" type="email" class="form-control">
+						<input id="email" type="email" name="email" class="form-control">
 					</div>
 					<div id="erroEmail"></div>
 
 					<label class="desc_input" for="password">Senha:</label>
 					<div class="input-group mb-3">
-						<input id="senha" type="password" class="form-control">
+						<input id="senha" type="password" name="senha" class="form-control">
 					</div>
 					<div id="erroSenha"></div>
 

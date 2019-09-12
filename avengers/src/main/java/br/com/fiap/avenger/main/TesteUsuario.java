@@ -1,5 +1,6 @@
 package br.com.fiap.avenger.main;
 
+
 import br.com.fiap.avenger.dao.UsuarioDAO;
 import br.com.fiap.avenger.model.Usuario;
 
@@ -10,7 +11,7 @@ public class TesteUsuario {
 		
 		try {
 			dao_usu = new UsuarioDAO();
-			Usuario u = dao_usu.getUser(5);
+			Usuario u = new Usuario(); 
 			System.out.println("NOME: " + u.getNome_usuario()); 
 			System.out.println("EMAIL: "+u.getEmail_usuario()); 
 			System.out.println("SENHA: "+u.getSenha_usuario()); 

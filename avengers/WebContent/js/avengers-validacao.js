@@ -99,5 +99,6 @@ form.onsubmit = validaCampo => {
       nome.classList.add("sucesso");
       nome.style.borderColor = "green";
       erroNome.textContent = "";
-    }
+    } 
+	form.submit();
 };

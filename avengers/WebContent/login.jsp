@@ -11,7 +11,7 @@
 
 				<img class="logo" src="img/logoAvenger.jpg" alt="">
 
-				<form id="form-geral" class="login" action="avengers-entrada.html"
+				<form id="form-geral" class="login" action="login"
 					method="post">
 
 					<label class="desc_input" for="email">Email:</label>
