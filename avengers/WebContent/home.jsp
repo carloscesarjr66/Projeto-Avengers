@@ -28,7 +28,7 @@
 	</nav>
 
 	<!-- <img class="logo" src="img/logoAvenger.jpg" alt=""> -->
-	<form id="form-geral" class="entrada" action="avengers-entrada.html"
+	<form id="form-geral" class="entrada" action="veiculo"
 		method="post">
 		<div class="container">
 			<div class="row">
@@ -51,8 +51,7 @@
 					</div>
 				</div>
 			</div>
-
-
+		</div>
 			<div class="row">
 				<div class="col-6">
 					<label class="desc_input" for="placa">Modelo:</label>
@@ -60,12 +59,12 @@
 						<input id="modelo" type="text" class="form-control">
 					</div>
 				</div>
+			</div>
 				<div class="col-6">
 					<button class="btn btn-primary btnEntrada">Entrada</button>
 				</div>
 	</form>
-	</div>
-	</div>
+	
 
 	<form id="form-geral" class="entrada" action="avengers-saida.html"
 		method="post"></form>

@@ -34,8 +34,7 @@
 
 				<img class="logo" src="img/logoAvenger.jpg" alt="">
 
-				<form id="form-geral" class="cadastro" action="cadastro"
-					method="get">
+				<form id="form-geral" class="cadastro" action="cadastro" method="post">
 					<label class="desc_input" for="name">Nome:</label>
 					<div class="input-group mb-3">
 						<input id="name" type="text" name="nome" class="form-control">
@@ -65,7 +64,6 @@
 						class="btn btnCadastrar btn-primary">Cadastrar</button>
 			</div>
 			</form>
-
 			<div class="col"></div>
 
 		</div>

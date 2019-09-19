@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import br.com.fiap.avenger.dao.UsuarioDAO;
-import br.com.fiap.avenger.model.Usuario;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
@@ -18,8 +17,12 @@ public class LoginServlet extends HttpServlet {
 		UsuarioDAO dao_usu = null;
 		try {
 			dao_usu = new UsuarioDAO();
-			Usuario u = new Usuario(); 
-			dao_usu.getUser(req.getParameter("email"), req.getParameter("senha")); 
+			
+			if (dao_usu.getUser(req.getParameter("email"), req.getParameter("senha")) == 0) {
+				System.out.println("Usuario não encontrado");
+			} else {
+				System.out.println("Usuario encontrado");
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
